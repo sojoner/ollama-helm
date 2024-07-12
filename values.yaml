@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 # -- Number of replicas
-replicaCount: 1
+replicaCount: 2
 
 # Knative configuration
 knative:
@@ -42,7 +42,7 @@ fullnameOverride: ""
 ollama:
   gpu:
     # -- Enable GPU integration
-    enabled: false
+    enabled: true
 
     # -- GPU type: 'nvidia' or 'amd'
     # If 'ollama.gpu.enabled', default value is nvidia
@@ -58,7 +58,9 @@ ollama:
   # models:
   #  - llama2
   #  - mistral
-  models: []
+  models:
+  - llama3:7b
+
 
   # -- Add insecure flag for pulling at container startup
   insecure: false
