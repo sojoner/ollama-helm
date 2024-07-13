@@ -306,7 +306,7 @@ affinity: {}
 # -- How to replace existing pods
 updateStrategy:
   # -- Can be "Recreate" or "RollingUpdate". Default is RollingUpdate
-  type: ""
+  type: "Recreate"
 
 # -- Init containers to add to the pod
 initContainers: []
