@@ -104,8 +104,8 @@ runtimeClassName: "nvidia"
 # Configure Service
 service:
 
-  # -- Service type
-  type: ClusterIP
+  # -- Service type (ClusterIP, NodePort, LoadBalancer, or ExternalName)
+  type: NodePort
 
   # -- Service port
   port: 11434
@@ -269,7 +269,7 @@ persistentVolume:
   existingClaim: ""
 
   # -- Ollama server data Persistent Volume size
-  size: 30Gi
+  size: 150Gi
 
   # -- Ollama server data Persistent Volume Storage Class
   # If defined, storageClassName: <storageClass>
