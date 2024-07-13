@@ -1,4 +1,10 @@
 {{- if not .Values.knative.enabled }}
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: nvidia
+handler: nvidia
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -53,12 +59,12 @@ spec:
               protocol: TCP
           env:
             {{- if and .Values.ollama.gpu.enabled (or (eq .Values.ollama.gpu.type "nvidia") (not .Values.ollama.gpu.type))}}
-            - name: PATH
-              value: /usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-            - name: LD_LIBRARY_PATH
-              value: /usr/local/nvidia/lib:/usr/local/nvidia/lib64
+            # - name: PATH
+            #   value: /usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+            # - name: LD_LIBRARY_PATH
+            #   value: /usr/local/nvidia/lib:/usr/local/nvidia/lib64
             - name: NVIDIA_DRIVER_CAPABILITIES
-              value: compute,utility
+              value: all
             - name: NVIDIA_VISIBLE_DEVICES
               value: all
             {{- end}}
