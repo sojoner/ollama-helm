@@ -58,10 +58,15 @@ ollama:
   # models:
   #  - llama2
   #  - mistral
-  models: []
+  models:
+  - qwen2:7b
+  - llama3:7b
+  - mixtral:8x7b
+  - gemma2:9b
+
  
   # -- Add insecure flag for pulling at container startup
-  insecure: false
+  insecure: true
 
 # Service account
 # ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
