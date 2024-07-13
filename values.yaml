@@ -101,7 +101,7 @@ securityContext: {}
   # runAsUser: 1000
 
 # -- Specify runtime class
-runtimeClassName: ""
+runtimeClassName: "nvidia"
 
 # Configure Service
 service:
