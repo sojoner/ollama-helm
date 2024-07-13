@@ -56,14 +56,11 @@ ollama:
   # -- List of models to pull at container startup
   # The more you add, the longer the container will take to start if models are not present
   # models:
-  #  - llama2
-  #  - mistral
-  models:
-  - qwen2:7b
-  - llama3:7b
-  - mixtral:8x7b
-  - gemma2:9b
-
+  # - llama3:7b
+  # - gemma2:9b
+  # - qwen2:7b
+  # - mixtral:8x7b
+  models: []
  
   # -- Add insecure flag for pulling at container startup
   insecure: true
